@@ -6,9 +6,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-// An example config class. This is not required, but it's a good idea to have one to keep your config organized.
-// Demonstrates how to use Neo's config APIs
 public class Config {
+
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     public static final ModConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER
@@ -28,7 +27,12 @@ public class Config {
             .comment("A list of items to log on common setup.")
             .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), () -> "", Config::validateItemName);
 
-    static final ModConfigSpec SPEC = BUILDER.build();
+    // XP per level setting
+    public static final ModConfigSpec.IntValue XP_PER_LEVEL = BUILDER
+            .comment("How much XP is required per level")
+            .defineInRange("xpPerLevel", 10, 1, Integer.MAX_VALUE);
+
+    public static final ModConfigSpec SPEC = BUILDER.build();
 
     private static boolean validateItemName(final Object obj) {
         return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(itemName));

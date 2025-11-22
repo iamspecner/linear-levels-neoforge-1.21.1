@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.wasadog91.linearlevels.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "PlayerXpMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
