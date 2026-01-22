@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.wasadog91.linearlevels.mixin",
+  "package": "com.iamspecner.linearlevels.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "PlayerXpMixin"

@@ -1,11 +1,13 @@
-package com.wasadog91.linearlevels;
+package com.iamspecner.linearlevels;
 
 
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
-import org.slf4j.Logger;
 
-import com.mojang.logging.LogUtils;
+
+//import org.slf4j.Logger;
+
+//import com.mojang.logging.LogUtils;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -27,7 +29,7 @@ public class LinearLevels {
 
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "linearlevels";
-    public static final Logger LOGGER = LogUtils.getLogger();
+    //public static final Logger LOGGER = LogUtils.getLogger();
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
@@ -45,7 +47,6 @@ public class LinearLevels {
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-        modContainer.registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);
 
 
         ModLoadingContext.get().registerExtensionPoint(
